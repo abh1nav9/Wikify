@@ -1,10 +1,15 @@
 import mongoose from 'mongoose';
-import {MONGO_URI} from './proxy';
+import dotenv from 'dotenv';
 
-const MONGODB_URI = MONGO_URI || "String Not Available";
+dotenv.config();
+
+const MONGODB_URI = process.env.MONGODB_URI || '';
 
 export const connectDB = async () => {
   try {
+    if (!MONGODB_URI) {
+      throw new Error('MONGODB_URI is not defined');
+    }
     await mongoose.connect(MONGODB_URI);
     console.log('Connected to MongoDB');
   } catch (error) {
