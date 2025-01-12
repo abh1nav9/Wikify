@@ -16,10 +16,12 @@ router.get('/', async (req, res) => {
         const wikiResponse = await axios.get('https://en.wikipedia.org/w/api.php', {
             params: {
                 action: 'query',
-                list: 'search',
-                srsearch: query,    
+                prop: 'extract', 
+                titles: query,
+                exintro: true,
+                explaintext: true,   
                 format: 'json',
-                origin: '*'
+                redirects: 1,
             }
         });
 
