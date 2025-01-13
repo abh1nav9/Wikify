@@ -1,4 +1,3 @@
-import { time } from "console";
 import mongoose, { Schema, Document } from "mongoose";
 
 interface ISearchLog extends Document {
