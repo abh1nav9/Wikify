@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../Redux/Store/Index';
-import { toggleTheme } from '../Redux/Slice/ThemeSlice';
+import { RootState } from '../../Redux/Store/Index';
+import { toggleTheme } from '../../Redux/Slice/ThemeSlice';
 
 const ThemeToggler: React.FC = () => {
     const dispatch = useDispatch();

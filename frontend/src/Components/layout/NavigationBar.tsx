@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemeToggler from './ThemeToggler';
+import ThemeToggler from '../theme/ThemeToggler';
 
 const NavigationBar: React.FC = () => {
   return (
