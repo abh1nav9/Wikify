@@ -4,6 +4,7 @@ import { PORT } from './proxy';
 
 import { connectDB } from './connection';
 import shortSearchRoutes from './routes/shortSearch.route';
+import longSearchRoutes from './routes/longSearch.route';
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 
 app.use('/v1/shortSearch', shortSearchRoutes);
+app.use('/v1/longSearch', longSearchRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
