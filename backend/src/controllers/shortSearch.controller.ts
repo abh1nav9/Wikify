@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
-import SearchLog from '../models/search.model';
+import ShortSearchLogSchema from '../models/shortSearch.model';
 
-export async function searchQuery(req: Request, res: Response) {
+export async function shortSearchQuery(req: Request, res: Response) {
     try {
         const query = req.query.query as string;
         if (!query) {
@@ -26,7 +26,7 @@ export async function searchQuery(req: Request, res: Response) {
         console.log('Wikipedia response:', wikiResponse.data);
 
         // Save the search log to the database
-        await SearchLog.create({ query, timestamp: new Date() });
+        await ShortSearchLogSchema.create({ query, timestamp: new Date() });
 
         // Return the result from Wikipedia
         res.json({ results: wikiResponse.data });
