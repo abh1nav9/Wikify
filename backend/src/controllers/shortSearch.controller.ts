@@ -22,7 +22,7 @@ export async function shortSearchQuery(req: Request, res: Response) {
             }
         });
 
-        console.log('Wikipedia response:', wikiResponse.data);
+        // console.log('Wikipedia response:', wikiResponse.data);
 
         // Save the search log to the database
         await ShortSearchLogSchema.create({ query, timestamp: new Date() });

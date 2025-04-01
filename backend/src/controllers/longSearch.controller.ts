@@ -15,7 +15,7 @@ export async function longSearchQuery(req: Request, res: Response) {
             }
         });
 
-        console.log('Wikipedia response:', wikiResponse.data);
+        // console.log('Wikipedia response:', wikiResponse.data);
 
         // Save the search log to the database
         await longSearchLogSchema.create({ query, timestamp: new Date() });
