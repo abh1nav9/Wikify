@@ -15,7 +15,7 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 
 app.use('/v1/shortSearch', shortSearchRoutes);
-app.use('/v1/longSearchWiki', longSearchRoutes);
+app.use('/v1/longSearch', longSearchRoutes);
 app.use('/v1/search', searchRoutes);
 
 app.listen(PORT, () => {
